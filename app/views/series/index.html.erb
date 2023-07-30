@@ -1,0 +1,20 @@
+<div class='container'>
+  <h1 class='my-5'>Lista de Series</h1>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <% @serie.each do |p| %>
+      <div class="col">
+        <div class="card">
+          <img src="https://picsum.photos/300/150" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><%= p.name %></h5>
+            <p class="card-text"><%= p.synopsis %></p>
+            <p><%= p.director %></p>
+          </div>
+        </div>
+      </div>
+    <% end%>
+  </div>
+  <div class='me-1'>
+    <%= link_to "Agregar nueva serie", series_new_path, class: 'btn btn-primary my-5' %>
+  </div>
+</div>
